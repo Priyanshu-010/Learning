@@ -4,7 +4,7 @@ import './UserCard.css'
 
 export const UserCard = (props) => {
   return (
-    <div>
+    <div className='card'>
       <p className='name'>{props.name}</p>
       <img src={pic} alt="" className='image'/>
       <p className='description'>Description of user</p>

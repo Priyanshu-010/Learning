@@ -8,8 +8,14 @@
 body{
   background-color: rgb(59, 63, 102);
   color: white;
+}
+
+.container{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 10px;
 }

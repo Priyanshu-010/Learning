@@ -12,3 +12,9 @@
 .description{
   margin: 10px 0;
 }
+
+.card{
+  background-color: burlywood;
+  width: 20%;
+  height: 20%;
+}

@@ -17,6 +17,7 @@ function App() {
       <h1>Count is {count}</h1> 
       <button onClick={handleClick}>Click to increment</button>
       <button onClick={handleClickDec}>Click to decrement</button>
+      {/* OR <button onClick={()=>{setCount(count + 1)}}>Click to decrement</button> */}
     </div>
   )
 }

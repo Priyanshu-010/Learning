@@ -57,6 +57,18 @@ function App() {
   //   alert("Dependencies have been updated")
   // }, [count, name])
 
+  // Variation 5
+  // Cleanup function
+
+  useEffect(() => {
+    alert("count is updated")
+
+    return () => {
+      alert("Count is unmounted")
+    }
+  }, [count])
+  
+
   return (
     <div>
       <h1>Count is {count}</h1>

@@ -5,6 +5,8 @@ import About from './components/About';
 import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
 import Params from './components/Params';
+import Courses from './components/Courses';
+import Reports from './components/Reports';
 
 const router = createBrowserRouter([
   {
@@ -26,13 +28,29 @@ const router = createBrowserRouter([
     element: <div>
       <Navbar />
       <Dashboard />
-    </div>
+    </div>,
+    children: [
+      {
+        path: 'courses',
+        element : <Courses />
+      },
+      {
+        path: 'reports',
+        element : <Reports />
+      }
+    ]
   },
   {
     path: '/students/:id',
     element: <div>
       <Navbar />
       <Params />
+    </div>
+  },
+  {
+    path: '*',
+    element: <div>
+      <h1>404 Page Not Found</h1>
     </div>
   }
 ])

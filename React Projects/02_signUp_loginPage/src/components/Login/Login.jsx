@@ -16,7 +16,7 @@ const Login = () => {
   const navigate = useNavigate()
 
   function onSubmit(data) {
-    console.log("Submitting Form Data for Login: ", data)
+    console.log("Submitting the Data Form for Login: ", data)
   }
 
   function handleClick() {

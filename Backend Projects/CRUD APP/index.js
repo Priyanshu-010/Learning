@@ -45,7 +45,6 @@ app.get("/api/products/:id", async(req, res) =>{
     res.status(500).json({messaage: error.message})
   }
 })
-
 app.put("/api/products/:id", async(req, res) =>{
   try {
     const {id} = req.params;
@@ -69,6 +68,7 @@ app.delete("/api/products/:id", async(req, res) =>{
     res.status(500).json({messaage: error.message})
   }
 })
+
 
 app.listen(port, ()=>{
   console.log(`Server is running on port ${port}`)

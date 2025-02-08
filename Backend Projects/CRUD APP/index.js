@@ -6,6 +6,7 @@ const app = express();
 const port = 3000
 
 app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 
 
 mongoose.connect("mongodb+srv://priyanshurai2772:PqOGAcfAGG7bmHpf@cluster0.nh8yb.mongodb.net/Node-API?retryWrites=true&w=majority&appName=Cluster0").then(() => {

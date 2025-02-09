@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import router from "./routes/workouts.js";
+import router from "./routes/workouts.route.js";
 import mongoose from "mongoose";
 
 dotenv.config();

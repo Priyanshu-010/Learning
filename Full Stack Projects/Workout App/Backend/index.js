@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import router from "./routes/workouts.js";
+import mongoose from "mongoose";
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,12 @@ app.use((req, res, next)=>{
 
 app.use("/api/workouts", router);
 
-app.listen(process.env.PORT , () => {
-  console.log(`Server is running on port ${process.env.PORT}`)
+mongoose.connect(process.env.MONGO_URI).then(() => {
+  console.log("Connected to Database")
+  app.listen(process.env.PORT , () => {
+    console.log(`Server is running on port ${process.env.PORT}`)
+  })
+}).catch((err) => {
+  console.log(err)
 })
+

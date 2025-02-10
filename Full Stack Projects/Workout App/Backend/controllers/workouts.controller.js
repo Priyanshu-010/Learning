@@ -1,9 +1,9 @@
 import Workouts from "../models/workout.model.js";
-
+import mongoose from "mongoose";
 
 export const getAllWorkouts = async (req, res) => {
   try {
-    const workout = await Workouts.find({})
+    const workout = await Workouts.find({}).sort({createdAt: -1})
     res.status(200).json(workout)
   } catch (error) {
     res.status(500).json({message: error.message})
@@ -13,7 +13,15 @@ export const getAllWorkouts = async (req, res) => {
 export const getSingleWorkout = async (req, res) => {
   try {
     const {id} = req.params
+    //Checking if the workout id is correct according to the database or not
+    if(!mongoose.Types.ObjectId.isValid(id)){
+      return res.status(404).json({message: "Workout not found"})
+    }
+
     const workout = await Workouts.findById(id)
+    if(!workout){
+      return res.status(404).json({message: "Workout not found"})
+    }
     res.status(200).json(workout)
   } catch (error) {
     res.status(500).json({message: error.message})
@@ -32,12 +40,15 @@ export const createWorkout = async(req,res) =>{
 export const updateWorkout = async (req, res) => {
   try {
     const {id} = req.params
+    if(!mongoose.Types.ObjectId.isValid(id)){
+      return res.status(404).json({message: "Workout not found"})
+    }
     const workout = await Workouts.findByIdAndUpdate(id, req.body)
     if(!workout){
       return res.status(404).json({message: "Workout not found"})
     }
     const updatedWorkout = await Workouts.findById(id)
-    res.status(200).json(updatedWorkout, {message: "Workout updated"})
+    res.status(200).json(updatedWorkout)
   } catch (error) {
     res.status(500).json({message: error.message})
   }
@@ -46,6 +57,10 @@ export const updateWorkout = async (req, res) => {
 export const deleteWorkout = async (req, res) => {
   try {
     const {id} = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+      return res.status(404).json({message: "Workout not found"})
+    }
     const workout = await Workouts.findByIdAndDelete(id)
     
     if(!workout){

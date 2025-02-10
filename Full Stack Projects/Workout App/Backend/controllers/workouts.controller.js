@@ -20,8 +20,9 @@ export const getSingleWorkout = async (req, res) => {
   }
 }
 export const createWorkout = async(req,res) =>{
+  const {title, reps, load} = req.body
   try {
-    const {workout} = await Workouts.create(req.body);
+    const workout = await Workouts.create({title, reps, load});
     res.status(201).json(workout)
   } catch (error) {
     res.status(500).json({message: error.message})
@@ -46,9 +47,12 @@ export const deleteWorkout = async (req, res) => {
   try {
     const {id} = req.params
     const workout = await Workouts.findByIdAndDelete(id)
-
     
-    res.status(200).json(workout, {message: "Workout deleted"})
+    if(!workout){
+      return res.status(404).json({messaage: "Wrokout not found"})
+    }
+    
+    res.status(200).json({message: "Workout deleted"})
   } catch (error) {
     res.status(500).json({message: error.message})
   }

@@ -1,21 +1,12 @@
 import express from "express";
-import Workouts from "../models/workout.model.js";
+import { createWorkout, deleteWorkout, getAllWorkouts, getSingleWorkout, updateWorkout } from "../controllers/workouts.controller.js";
 
 const router = express.Router();
 
-router.get("/", (req,res) =>{
-  res.send("Get all workouts")
-});
-router.get("/:id");
-router.post("/" , async(req,res) =>{
-  try {
-    const workout = await Workouts.create(req.body);
-    res.status(201).json(workout)
-  } catch (error) {
-    res.status(500).json({message: error.message})
-  }
-});
-router.put("/:id");
-router.delete("/:id");
+router.get("/", getAllWorkouts);
+router.get("/:id", getSingleWorkout);
+router.post("/", createWorkout);
+router.put("/:id", updateWorkout);
+router.delete("/:id", deleteWorkout);
 
 export default router

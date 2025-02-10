@@ -29,9 +29,19 @@ export const createWorkout = async(req,res) =>{
 };
 
 export const updateWorkout = async (req, res) => {
-  
+  try {
+    const {id} = req.params
+    const workout = await Workouts.findByIdAndUpdate(id, req.body)
+    res.status(200).json(workout)
+  } catch (error) {
+    res.status(500).json({message: error.message})
+  }
 }
 
 export const deleteWorkout = async (req, res) => {
-  
+  try {
+    
+  } catch (error) {
+    
+  }
 }

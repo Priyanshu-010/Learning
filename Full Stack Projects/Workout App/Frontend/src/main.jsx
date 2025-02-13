@@ -1,9 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+import WorkoutContextProvider from './context/WorkoutContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <WorkoutContextProvider>
+      <App />
+    </WorkoutContextProvider>
   </StrictMode>,
 )

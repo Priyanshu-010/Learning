@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import WorkoutDetails from '../components/WorkoutDetails'
+import WorkoutForm from '../components/WorkoutForm'
+import './HomePage.css'
 
 const HomePage = () => {
 
-  const [workouts, setWorkouts] = useState([])
+  const [workouts, setWorkouts] = useState(null)
 
   useEffect(()=>{
     const fetchWorkouts = async ()=>{
@@ -23,6 +25,7 @@ const HomePage = () => {
           <WorkoutDetails key={workout._id} workout= {workout}/>
         ))}
       </div>
+      <WorkoutForm />
     </div>
   )
 }

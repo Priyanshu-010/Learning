@@ -1,14 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import router from "./routes/workouts.route.js";
 import mongoose from "mongoose";
 
 dotenv.config();
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next)=>{
-  console.log(req.path, req.method)
+  // console.log(req.path, req.method)
   next()
 })
 

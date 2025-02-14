@@ -18,7 +18,7 @@ const WorkoutDetails = ({ workout }) => {
       <h3>{workout.title}</h3>
       <p><strong>Load (in kg): </strong> {workout.load}</p>
       <p><strong>Reps: </strong> {workout.reps}</p>
-      <p>{workout.createdAt}</p>
+      <p className='date'>{workout.createdAt}</p>
       <span onClick={handleClick}>Delete</span>
     </div>
   )

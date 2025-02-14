@@ -1,6 +1,6 @@
-import React from 'react'
-
-import './WorkoutDetails.css'
+import React from 'react';
+import './WorkoutDetails.css';
+import deleteIcon from '../assets/delete.png';
 import useWorkoutsContext from '../hooks/useWorkoutsContext';
 
 const WorkoutDetails = ({ workout }) => {
@@ -19,7 +19,7 @@ const WorkoutDetails = ({ workout }) => {
       <p><strong>Load (in kg): </strong> {workout.load}</p>
       <p><strong>Reps: </strong> {workout.reps}</p>
       <p className='date'>{workout.createdAt}</p>
-      <span onClick={handleClick}>Delete</span>
+      <span onClick={handleClick}><img src={deleteIcon} className="delete-icon" /></span>
     </div>
   )
 }

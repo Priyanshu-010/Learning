@@ -40,6 +40,12 @@ span {
   transition: color 0.2s ease-in-out;
 }
 
-span:hover {
-  color: darkred;
+.delete-icon {
+  width: 20px; /* Adjust size */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.delete-icon:hover {
+  transform: scale(1.1);
 }

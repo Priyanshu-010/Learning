@@ -67,7 +67,7 @@ export const deleteWorkout = async (req, res) => {
       return res.status(404).json({messaage: "Wrokout not found"})
     }
     
-    res.status(200).json({message: "Workout deleted"})
+    res.status(200).json(workout)
   } catch (error) {
     res.status(500).json({message: error.message})
   }

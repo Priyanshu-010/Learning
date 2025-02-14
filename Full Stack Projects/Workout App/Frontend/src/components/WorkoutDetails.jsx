@@ -2,6 +2,7 @@ import React from 'react';
 import './WorkoutDetails.css';
 import deleteIcon from '../assets/delete.png';
 import useWorkoutsContext from '../hooks/useWorkoutsContext';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
@@ -18,7 +19,7 @@ const WorkoutDetails = ({ workout }) => {
       <h3>{workout.title}</h3>
       <p><strong>Load (in kg): </strong> {workout.load}</p>
       <p><strong>Reps: </strong> {workout.reps}</p>
-      <p className='date'>{workout.createdAt}</p>
+      <p className='date'>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
       <span onClick={handleClick}><img src={deleteIcon} className="delete-icon" /></span>
     </div>
   )

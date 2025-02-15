@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import router from "./routes/workouts.route.js";
+import userRoutes from "./routes/user.route.js";
 import mongoose from "mongoose";
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use((req, res, next)=>{
 })
 
 app.use("/api/workouts", router);
+app.use("/api/user", userRoutes);
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
   console.log("Connected to Database")

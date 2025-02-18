@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -20,8 +21,9 @@ userSchema.statics.signup = async function(email, password) {
     throw Error('Email already in use')
   }
 
-  const salt = await bcyrpt.salt(10);
-  const hash = await bcyrpt.hash(password, salt);
+  const salt = await bcrypt.genSalt(10);
+  const hash = await bcrypt.hash(password.toString(), salt);
+
   const user = await this.create({email, password: hash});
 
   return user

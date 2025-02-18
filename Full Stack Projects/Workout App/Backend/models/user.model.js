@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   }
 })
 
-userSchema.statics.signup = async function (email, password) {
+userSchema.statics.signup = async function(email, password) {
 
   const exists = await this.findOne({ email });
 

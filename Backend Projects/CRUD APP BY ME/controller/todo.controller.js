@@ -28,3 +28,14 @@ export const createTodo = async (req,res) =>{
     res.status(500).json({message: error.message})
   }
 }
+
+export const updateTodo = async (req, res) =>{
+  try {
+    const {id} = req.params;
+    const todo = await Todo.findByIdAndUpdate(id, req.body);
+    const updatedTodo = await Todo.findById(id);
+    res.status(200).json(updatedTodo)
+  } catch (error) {
+    res.status(500).json({message: error.message})
+  }
+}

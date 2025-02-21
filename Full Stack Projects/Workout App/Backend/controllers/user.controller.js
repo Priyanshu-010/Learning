@@ -6,7 +6,7 @@ const createToken = (_id)=>{
 }
 
 export const loginUser = async (req, res) => {
-  res.send("Login User")
+  res.json("Login User")
 } 
 
 export const signupUser = async (req, res) => {

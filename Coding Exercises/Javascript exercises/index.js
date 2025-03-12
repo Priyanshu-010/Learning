@@ -239,3 +239,16 @@
 // }
 
 // sum(arr)
+
+const arr =[
+  {firstName: "Priyanshu", lastName: "Rai", age: 24},
+  {firstName: "Aashu", lastName: "Rai", age: 22},
+  {firstName: "john", lastName: "doe", age: 21},
+  {firstName: "Alice", lastName: "doe", age: 21},
+]
+
+const ans = arr.map((val)=>{
+  return val.firstName + " " + val.lastName
+})
+
+console.log(ans)

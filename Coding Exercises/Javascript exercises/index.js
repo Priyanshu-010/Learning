@@ -260,3 +260,14 @@ const arr =[
 // })
 
 // console.log(ans)
+
+const ans = arr.reduce((acc, val)=>{
+  if(acc[val.age]){
+    acc[val.age] = acc[val.age]+1;
+  }else{
+    acc[val.age] = 1
+  }
+  return acc
+},{})
+
+console.log(ans)

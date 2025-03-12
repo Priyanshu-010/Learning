@@ -247,8 +247,16 @@ const arr =[
   {firstName: "Alice", lastName: "doe", age: 21},
 ]
 
-const ans = arr.map((val)=>{
-  return val.firstName + " " + val.lastName
-})
+// const ans = arr.map((val)=>{
+//   return val.firstName + " " + val.lastName
+// })
 
-console.log(ans)
+// console.log(ans)
+
+// const ans = arr.filter((val)=>{
+//   if (val.age >21){
+//     return true;
+//   }
+// })
+
+// console.log(ans)

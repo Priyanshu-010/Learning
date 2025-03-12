@@ -261,13 +261,21 @@ const arr =[
 
 // console.log(ans)
 
-const ans = arr.reduce((acc, val)=>{
-  if(acc[val.age]){
-    acc[val.age] = acc[val.age]+1;
-  }else{
-    acc[val.age] = 1
-  }
-  return acc
-},{})
+// const ans = arr.reduce((acc, val)=>{
+//   if(acc[val.age]){
+//     acc[val.age] = acc[val.age]+1;
+//   }else{
+//     acc[val.age] = 1
+//   }
+//   return acc
+// },{})
 
-console.log(ans)
+// console.log(ans)
+
+// const chaining = arr.filter(val => val.age>21).map(val => val.firstName);
+// console.log(chaining)
+
+//This could even be like this
+// const chain = arr.filter(val => val.age>21);
+// const ans = chain.map(val => val.firstName);
+// console.log(ans)

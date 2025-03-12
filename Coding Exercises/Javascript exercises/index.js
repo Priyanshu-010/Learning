@@ -240,12 +240,12 @@
 
 // sum(arr)
 
-const arr =[
-  {firstName: "Priyanshu", lastName: "Rai", age: 24},
-  {firstName: "Aashu", lastName: "Rai", age: 22},
-  {firstName: "john", lastName: "doe", age: 21},
-  {firstName: "Alice", lastName: "doe", age: 21},
-]
+// const arr =[
+//   {firstName: "Priyanshu", lastName: "Rai", age: 24},
+//   {firstName: "Aashu", lastName: "Rai", age: 22},
+//   {firstName: "john", lastName: "doe", age: 21},
+//   {firstName: "Alice", lastName: "doe", age: 21},
+// ]
 
 // const ans = arr.map((val)=>{
 //   return val.firstName + " " + val.lastName
@@ -279,3 +279,13 @@ const arr =[
 // const chain = arr.filter(val => val.age>21);
 // const ans = chain.map(val => val.firstName);
 // console.log(ans)
+
+// Same Chaining  example but with reduce function
+
+// const op = arr.reduce((acc, val)=>{
+//   if(val.age>21){
+//       acc.push(val.firstName)
+//   }
+//   return acc
+// },[])
+// console.log(op)

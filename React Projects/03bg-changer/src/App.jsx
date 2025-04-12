@@ -4,20 +4,16 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [color, setColor] = useState('white')
 
-  function handleClick(e) {
-    const color = e.target.innerText
-    document.body.style.backgroundColor = color
-  }
   return (
-    <div className='container'>
-      <button onClick={handleClick} style={{backgroundColor: 'red'}}>Red</button>
-      <button onClick={handleClick} style={{backgroundColor: 'green'}}>Green</button>
-      <button onClick={handleClick} style={{backgroundColor: 'blue'}}>Blue</button>
-      <button onClick={handleClick} style={{backgroundColor: 'yellow'}}>Yellow</button>
-      <button onClick={handleClick} style={{backgroundColor: 'black'}}>Black</button>
-      <button onClick={handleClick} style={{backgroundColor: 'white'}}>White</button>
+    <div className='container' style={{backgroundColor: color, width: '100%', height: '100vh'}}>
+      <button onClick={()=> setColor('red')} style={{backgroundColor: 'red'}}>Red</button>
+      <button onClick={()=> setColor('green')} style={{backgroundColor: 'green'}}>Green</button>
+      <button onClick={()=> setColor('blue')} style={{backgroundColor: 'blue'}}>Blue</button>
+      <button onClick={()=> setColor('yellow')} style={{backgroundColor: 'yellow'}}>Yellow</button>
+      <button onClick={()=> setColor('black')} style={{backgroundColor: 'black'}}>Black</button>
+      <button onClick={()=> setColor('white')} style={{backgroundColor: 'white'}}>White</button>
     </div>
   )
 }

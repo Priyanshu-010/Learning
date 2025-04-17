@@ -7,7 +7,7 @@ export const signup = async (req, res)=>{
     const {name, email, password} = req.body
     const user = await UserModel.findOne({email});
     if(user){
-      res.status(400).json({message: "User already exists"});
+      return res.status(400).json({message: "User already exists"});
     }
     const usermodel = new UserModel({name, email, password});
     usermodel.password = await bcrypt.hash(password, 10);
@@ -25,7 +25,7 @@ export const login = async (req, res)=>{
     const user = await UserModel.findOne({email});
 
     if(!user){
-      res.status(400).json({message: "User not found"});
+      return res.status(400).json({message: "User not found"});
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);

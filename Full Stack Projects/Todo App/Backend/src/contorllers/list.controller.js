@@ -48,3 +48,15 @@ export const deleteList = async (req, res) => {
     res.status(500).json({message: error.message})
   }
 }
+export const getList = async (req, res) => {
+  try {
+    const list = await List.find({user: req.params.id}).sort({createdAt: -1});
+    if (list.length !== 0) {
+      res.status(200).json(list)
+    } else {
+      res.status(200).json({message: "No Task Found"})
+    }
+  } catch (error) {
+    res.status(500).json({message: error.message})
+  }
+}

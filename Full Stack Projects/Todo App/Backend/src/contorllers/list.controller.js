@@ -39,9 +39,9 @@ export const updateList = async (req, res) => {
 export const deleteList = async (req, res) => {
   try {
     const { email } = req.body;
-    const existingUser = await User.findOne({email});
+    const existingUser = await User.findOneAndUpdate({email},{$pull:{list: req.params.id}});
     if(existingUser){
-      const list = await List.findByIdAndDelete(req.params.id);
+      await List.findByIdAndDelete(req.params.id);
       res.status(200).json({message: "List deleted"})
     }
   } catch (error) {

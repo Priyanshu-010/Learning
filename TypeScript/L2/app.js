@@ -33,3 +33,11 @@
 // }
 // // ... is a rest operator which is used to create an array of any number of elements passed in the function
 // abcd3(1,2,3,4,5,6,7,8,9,10)
+// 03 Generics
+// It is a type of function which takes any type of data and returns any type of data
+function abcd4(val) {
+    console.log(val);
+}
+// In place of T we can put anything like P X, etc but its a convention to use T
+abcd4("hello");
+abcd4(10);

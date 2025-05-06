@@ -1,11 +1,9 @@
 
-import './App.css'
-
 function App() {
 
 
   return (
-    <div>
+    <div className="bg-red-500">
       Bookstore
     </div>
   )

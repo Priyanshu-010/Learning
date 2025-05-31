@@ -1,6 +1,7 @@
 import { createContext, useReducer } from 'react'
 import Login from './components/login/Login'
 import Logout from './components/logout/Logout'
+import ToggleButton from './components/ToggleButton';
 
 export const UserContext = createContext();
 
@@ -25,6 +26,7 @@ function App() {
       <Login />
       <Logout />
     </UserContext.Provider>
+    <ToggleButton />
     </div>
   )
 }

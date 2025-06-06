@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import './Task.css'
 const Task = ({title}) => {
   const STATUS = 'PLANNED'
@@ -6,7 +7,7 @@ const Task = ({title}) => {
       <div>{title}</div>
       <div className='bottomWrapper'>
         <div></div>
-        <div className='statue'>{STATUS}</div>
+        <div className={classNames('status', STATUS)}>{STATUS}</div>
       </div>
     </div>
     

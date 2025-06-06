@@ -3,6 +3,7 @@ import './App.css'
 import Input from './components/Input'
 import { useState } from 'react'
 import type { Todo } from './models/models'
+import TodoList from './components/TodoList'
 
 const App:React.FC = ()=> {
 
@@ -22,11 +23,7 @@ const App:React.FC = ()=> {
     <div className="App">
       <span className="heading">Taskify</span>
       <Input todo={todo} setTodo={setTodo} handleSubmit={handleSubmit}/>
-      {todos.map((todo)=>(
-        <div className="todo" key={todo.id}>
-          <p>{todo.todo}</p>
-        </div>
-      ))}
+      <TodoList todos={todos} setTodos={setTodos}/>
     </div>
   )
 }

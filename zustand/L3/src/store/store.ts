@@ -1,21 +1,19 @@
 import { create } from "zustand"
 
-export interface Habit {
-  id: string
-  name: string
-  frequency: "daily" | "weekly"
-  completedDates: string[]
-  createdAt: string 
+interface CountStore {
+  count: number
+  increment: ()=>{}
+  decrement: ()=>{}
+  addByValue: (val:number)=>{}
 }
 
-interface HabitState {
-  habits: Habit[]
-}
-
-const useHabitStore = create<HabitState>((set,get)=>{
+const useCountStore = create<CountStore>((set)=>{
   return {
-    habits: [],
+    count: 0,
+    decrement: ()=> set((state) => ({count: state.count -1})),
+    increment: ()=> set((state) => ({count: state.count +1})),
+    addByValue: (val:number)=> set((state)=> ({count: state.count + val}))
   }
 })
 
-export default useHabitStore
+export default useCountStore

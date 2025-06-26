@@ -1,6 +1,5 @@
-import { Link } from "lucide-react";
-
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 export default function Home() {
   return (
     <div>
@@ -8,7 +7,7 @@ export default function Home() {
       <div className="flex items-center justify-between">
         <h1>Snippets</h1>
         <Link href={"/snippet/new"}>
-          New
+          <Button>New</Button>
         </Link>
       </div>
     </div>

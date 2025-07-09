@@ -3,7 +3,7 @@
 export default function Home() {
   return (
     <div>
-      Home Page
+      Hello This is the main Page / Home Page
     </div>
   );
 }
